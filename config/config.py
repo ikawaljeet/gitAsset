@@ -1,27 +1,28 @@
+import json
+
 class Config:
 
     def __init__(self):
+        with open('config/jsonConfig.json', 'r') as f:
+            self.jsonConfig = json.load(f)
+        print("jsonConfig: {}".format(self.jsonConfig))
+
         # Access Configuration
-        self.organisation_name = 'skywalkerInc'
-        self.repository_name = 'SharpenTheAxe'
-        self.auth_token = '7ce7d4018d070c844e1b38b86e8435a8f54621ea'
+        self.organisation_name = self.jsonConfig['organisation_name']
+        self.repository_name = self.jsonConfig['repository_name']
+        self.auth_token = self.jsonConfig['auth_token']
 
         # Download Configuration
-        self.is_download = True
-        self.is_download_all = True #If True, it will download all asset associated with release else it will take only asset names listed in release_asset_name_list
-        self.release_tag_name_to_download = 'v0.1'
-        self.release_asset_download_directory = '/home/kawaljeet/Workspace/programmingPractice/pythonPrograms/assetFiles'
-        self.release_asset_name_list = [] # List of asset name when is_download_all is False
+        self.is_download = self.jsonConfig['is_download']
+        self.is_download_all = self.jsonConfig['is_download_all']
+        self.release_tag_name_to_download = self.jsonConfig['release_tag_name_to_download']
+        self.release_asset_download_directory = self.jsonConfig['release_asset_download_directory']
+        self.release_asset_name_list = self.jsonConfig['release_asset_name_list']
 
         # Upload Configuration
-        self.is_upload = True
-        self.release_tag_name_to_upload = 'v0.1'
-        self.release_upload_file_info = [
-                                        {
-                                            "asset_name": "releaseAsset3.zip",
-                                            "asset_location": "/home/kawaljeet/Workspace/programmingPractice/pythonPrograms/assetFiles/build.zip"
-                                        }
-                                     ]
+        self.is_upload = self.jsonConfig['is_upload']
+        self.release_tag_name_to_upload = self.jsonConfig['release_tag_name_to_upload']
+        self.release_upload_file_info = self.jsonConfig['release_upload_file_info']
 
     def get_org_name(self):
         return self.organisation_name

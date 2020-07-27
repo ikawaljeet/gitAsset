@@ -1,7 +1,5 @@
-from src.gitAssetManager import GitAssetManager
+from src.gitSimpleAssetManager import GitSimpleAssetManager
 
 if __name__ == '__main__':
-    assetManager = GitAssetManager()
-    assetManager.test()
-
-    #TODO: command line interface
+    simpleAssetManager = GitSimpleAssetManager()
+    simpleAssetManager.main()

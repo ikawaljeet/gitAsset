@@ -15,7 +15,7 @@ class GitRestApi:
                 'Accept': 'application/octet-stream'
             }
             response = requests.request("GET", url, headers=headers)
-            print("Downloading Asset Successful")
+            print("Downloading Asset Successful From API")
         except Exception as e:
             print("Error in downloading asset: {}".format(e))
             return False

@@ -1,4 +1,15 @@
+Installation:
+* install pyGithub module in
+
+Function:
+* Remove all files in the download directory
+* Download assets, and replaces previous downloads if already existing with new ones
+* Upload all asset listed in configuration
+
 Steps to run:
 * modify config to add organisation name, repository name and auth token
 * modify test function in gitAssetManager for download assset location and upload asset location
 * run __init_git_asset__.py from project directory using python3
+
+Things to take care:
+* Try not to upload asset with same asset name, It may replace the existing asset in github

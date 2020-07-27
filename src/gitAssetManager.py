@@ -76,4 +76,3 @@ class GitAssetManager:
 if __name__ == '__main__':
     gitAssetManager = GitAssetManager()
     gitAssetManager.test()
-    pass

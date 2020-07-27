@@ -1,0 +1,4 @@
+Steps to run:
+* modify config to add organisation name, repository name and auth token
+* modify test function in gitAssetManager for download assset location and upload asset location
+* run __init_git_asset__.py from project directory using python3

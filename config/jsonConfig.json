@@ -3,6 +3,7 @@
   "repository_name": "SharpenTheAxe",
   "auth_token": "e480e57d3fe7db790c43013d4b47447e63a65eb2",
   "is_download": true,
+  "is_download_latest": true,
   "is_download_all": true,
   "release_tag_name_to_download": "v0.1",
   "release_asset_download_directory": "/home/kawaljeet/Workspace/programmingPractice/pythonPrograms/assetFiles",

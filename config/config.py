@@ -14,6 +14,7 @@ class Config:
 
         # Download Configuration
         self.is_download = self.jsonConfig['is_download']
+        self.is_download_latest = self.jsonConfig['is_download_latest']
         self.is_download_all = self.jsonConfig['is_download_all']
         self.release_tag_name_to_download = self.jsonConfig['release_tag_name_to_download']
         self.release_asset_download_directory = self.jsonConfig['release_asset_download_directory']

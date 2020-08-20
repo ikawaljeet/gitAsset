@@ -10,6 +10,9 @@ class GitSimpleAssetManager:
         self.gitRestApi = GitRestApi()
 
     def get_repo_release_obj_by_tag_name(self, org, repo, tag_name):
+        if self.config.is_download_latest == True:
+            return self.github.get_repo('{}/{}'.format(org, repo)).get_latest_release()
+
         git_releases_obj = self.github.get_repo('{}/{}'.format(org, repo)).get_releases()
 
         for release_obj in git_releases_obj:
@@ -26,6 +29,7 @@ class GitSimpleAssetManager:
                 return asset_obj
 
         return None
+
 
     def download_asset_by_release_tag_and_asset_name(self, org, repo, tag_name, asset_name, download_location):
         release_asset_obj = self.get_repo_asset_obj_by_release_tag_name(org, repo, tag_name, asset_name)
